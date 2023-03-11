@@ -2,7 +2,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   try {
     if (request.message === "set_cookie") {
       var cookieName = "test";
-      var cookieValue = "12345";
+      var cookieValue = prompt("Enter the cookie value:");
       var url = window.location.hostname;
       console.log(url);
       var expires = new Date();
