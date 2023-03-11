@@ -1,0 +1,32 @@
+{
+  "name": "Cookie Extension V4",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "A simple extension that sets a cookie when you click a button.",
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  
+  "action": {
+    "default_title": "Set Cookie",
+    "default_icon": {
+      "16": "icon.png",
+      "32": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "handler": "handleClick"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://d3w47vjalrg3v1.cloudfront.net/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
